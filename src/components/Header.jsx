@@ -1,5 +1,8 @@
 import React from "react";
 function Header(props) {
+    let totalAmount = props.cartData.cartData.reduce((total, item) => (
+        total + (item.count * item.price)
+    ), 0)
     return (
         <>
             {props.cartData.cartData.length > 0 && (
@@ -8,11 +11,17 @@ function Header(props) {
                     <ul>
                         {props.cartData.cartData.map((item, index) => (
                             <li key={index}>
-                                {item.name} - Count: {item.count}
+                                <strong>{item.name}</strong> - {item.count} x ₹{item.price} = ₹{item.count * item.price}
                             </li>
                         ))}
+
                     </ul>
+                    <div>-----------------------------------</div>
+                    <div><strong>Total </strong> =
+                        {totalAmount}
+                    </div>
                 </div>
+
             )
             }
         </>

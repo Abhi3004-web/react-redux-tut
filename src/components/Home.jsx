@@ -39,7 +39,7 @@ function Home(props) {
     return (
         <div style={{ padding: "20px" }}>
             <h2>Image List with Counter</h2>
-            
+
             <ul style={{ listStyle: "none", padding: 0 }}>
                 {imageList.map((image, index) => (
                     <li key={image.id} style={{ marginBottom: "20px" }}>
